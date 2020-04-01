@@ -17,3 +17,9 @@ npm run pd
 ```
 访问地址：
 [https://yibiankeji.github.io/blog/](https://yibiankeji.github.io/blog/)
+
+## 修改首页
+使用 编辑器 打开 项目后，通过 src/README.md 文件可以修改首页的名称和logo等。
+
+通过 src/.vuepress目录下得config.js 文件，可以修改导航栏的内容。
+
