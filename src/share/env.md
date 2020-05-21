@@ -12,6 +12,28 @@ collapsable: true
 
 在此分享一下自己这几年使用Mac系统进行软件开发搭建环境的一些心得和建议吧。
 
+## Git-SSH 配置和使用
+解决Mac下Git每次拉取代码都需要输入密码:
+- 设置Git的user name和email：
+```
+  $ git config --global user.name "username"
+  $ git config --global user.email "username@email.com"
+```
+- 生成密钥
+```
+  $ ssh-keygen -t rsa -C "username@email.com"
+```
+- 连续3个回车。如果不需要密码的话。
+- 最后得到了两个文件：id_rsa和id_rsa.pub。
+- 查看公有密钥，全部复制
+```
+$ cd ~/.ssh 
+$ cat id_rsa.pub
+```
+- 打开github或gitlab中，点击右上角头像，选择“Settings”，然后在左侧导航栏选择“SSH Keys” 添加上述查看到的公有密钥。
+- 就可以免密登录了，推送代码无忧。
+
+
 ## 配置source Tree
 解决mac下Sourcetree每次拉取代码都需要输入密码:
 - 先使用命令下载 git-credential-osxkeychain 
